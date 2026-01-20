@@ -116,7 +116,6 @@ def generate_sweep(
     if logarithmic:
         # 対数スイープ: 周波数が指数的に変化
         freq_ratio = end_freq / start_freq
-        instantaneous_freq = start_freq * (freq_ratio ** (t / duration))
         phase = (
             2
             * np.pi
