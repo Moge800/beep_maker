@@ -5,7 +5,6 @@ WAVフォーマット規定およびサウンド種別を定義する。
 
 from enum import Enum
 
-
 # WAV フォーマット規定
 SAMPLE_RATE: int = 16000  # Hz
 BIT_DEPTH: int = 16  # bits

@@ -3,8 +3,8 @@
 8種類の産業用ビープ音を生成する。
 """
 
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Callable
 
 import numpy as np
 

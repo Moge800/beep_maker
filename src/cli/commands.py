@@ -4,7 +4,7 @@ typer + rich でリッチなCLI体験を提供する。
 """
 
 from pathlib import Path
-from typing import Annotated, Optional
+from typing import Annotated
 
 import typer
 from rich.console import Console
@@ -67,7 +67,7 @@ def generate(
     except ValueError:
         console.print(f"[red]Error:[/red] 不明なサウンド種別: {sound_type}")
         console.print(f"有効な種別: {', '.join(SoundType.list_all())}")
-        raise typer.Exit(code=1)
+        raise typer.Exit(code=1) from None
 
     output_path = output_dir / f"{sound.value}.wav"
 
@@ -89,7 +89,7 @@ def generate(
 
     except OSError as e:
         console.print(f"[red]Error:[/red] ファイル書き込みに失敗: {e}")
-        raise typer.Exit(code=1)
+        raise typer.Exit(code=1) from None
 
 
 @app.command("generate-all")
@@ -194,7 +194,7 @@ def list_sounds() -> None:
 @app.callback()
 def main(
     version: Annotated[
-        Optional[bool],
+        bool | None,
         typer.Option(
             "--version",
             "-V",
