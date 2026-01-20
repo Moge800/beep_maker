@@ -1,0 +1,31 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# IDE
+.vscode/
+.idea/
+
+# Generated audio files
+assets/*.wav
+output/
+
+# Test / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Linter / Type checker cache
+.ruff_cache/
+.mypy_cache/
+
+# OS specific
+.DS_Store
+Thumbs.db
